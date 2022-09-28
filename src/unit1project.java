@@ -1,5 +1,6 @@
 import java.util.Scanner;
-        public class unit1project {
+
+public class unit1project {
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
         double noTaxBill;
@@ -17,12 +18,14 @@ import java.util.Scanner;
         partyAmount = s.nextInt();
         tipAmount = tipPercentage/100.0;
         totalTipAmount = (noTaxBill*tipAmount);
+        totalTipAmount = (double) Math.round(totalTipAmount*100)/100.0;
         totalBill = totalTipAmount + noTaxBill;
+        totalBill = Math.round(totalBill*100)/100.0;
         personTip = totalTipAmount/partyAmount;
-        personTip = Math.round(personTip*100)/100.0;
-        totalTipAmount = Math.round(totalTipAmount*100)/100.0;
+        personTip = Math.round(personTip*100)/100.00;
+        totalTipAmount = (double) Math.round(totalTipAmount*100)/100.0;
         eachPersonAmount = totalBill/partyAmount;
-        eachPersonAmount = Math.round(eachPersonAmount*100)/100.0;
+        eachPersonAmount = Math.round(eachPersonAmount*100)/100.00;
         System.out.print("Thank you. Your total tip amount is  $" + totalTipAmount + " Your total bill with tip is:  $" + totalBill + " Each person must pay  $" + personTip+ " each for tip. The total per person is: $" + eachPersonAmount);
 
     }
